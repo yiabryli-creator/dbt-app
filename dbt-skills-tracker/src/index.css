@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --muted: #64748b;
+  --accent: #0f172a;
+  --accent-contrast: #ffffff;
+  --accent-secondary: #cbd5e1;
+  --hover: #f8fafc;
+  --font-size: 16px;
+  --font-weight: 400;
+  color-scheme: light;
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+html[data-theme="light"] {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --muted: #64748b;
+  --accent: #0f172a;
+  --accent-contrast: #ffffff;
+  --accent-secondary: #cbd5e1;
+  --hover: #f8fafc;
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  --bg: #020617;
+  --text: #f8fafc;
+  --card: #0f172a;
+  --border: #1e293b;
+  --muted: #94a3b8;
+  --accent: #f8fafc;
+  --accent-contrast: #0f172a;
+  --accent-secondary: #334155;
+  --hover: #111827;
+  color-scheme: dark;
+}
+
+html[data-theme="purple-dark"] {
+  --bg: #121022;
+  --text: #ede9fe;
+  --card: #1f1b36;
+  --border: #3d3563;
+  --muted: #b7b0d9;
+  --accent: #8b5cf6;
+  --accent-contrast: #ffffff;
+  --accent-secondary: #c4b5fd;
+  --hover: #2b2445;
+  color-scheme: dark;
+}
+
+html[data-theme="purple-light"] {
+  --bg: #f7f3ff;
+  --text: #2e1b57;
+  --card: #ffffff;
+  --border: #d7c7ff;
+  --muted: #6a5796;
+  --accent: #7c3aed;
+  --accent-contrast: #ffffff;
+  --accent-secondary: #a78bfa;
+  --hover: #efe7ff;
+  color-scheme: light;
+}
+
+html[data-theme="green-dark"] {
+  --bg: #0f1d17;
+  --text: #dcfce7;
+  --card: #163126;
+  --border: #2f5a47;
+  --muted: #9fd7bc;
+  --accent: #22c55e;
+  --accent-contrast: #052e16;
+  --accent-secondary: #4ade80;
+  --hover: #1d3e2f;
+  color-scheme: dark;
+}
+
+html[data-theme="green-light"] {
+  --bg: #f2fdf5;
+  --text: #14432d;
+  --card: #ffffff;
+  --border: #b8ebc8;
+  --muted: #4f7f66;
+  --accent: #16a34a;
+  --accent-contrast: #ffffff;
+  --accent-secondary: #22c55e;
+  --hover: #e6f8ec;
+  color-scheme: light;
+}
+
+html[data-theme="pink-dark"] {
+  --bg: #251022;
+  --text: #fce7f3;
+  --card: #34182f;
+  --border: #5a2a4f;
+  --muted: #e5b3d0;
+  --accent: #ec4899;
+  --accent-contrast: #ffffff;
+  --accent-secondary: #f9a8d4;
+  --hover: #46203f;
+  color-scheme: dark;
+}
+
+html[data-theme="pink-light"] {
+  --bg: #fff1f7;
+  --text: #5e2348;
+  --card: #ffffff;
+  --border: #ffc6e0;
+  --muted: #9a5f83;
+  --accent: #db2777;
+  --accent-contrast: #ffffff;
+  --accent-secondary: #f472b6;
+  --hover: #ffe4f0;
+  color-scheme: light;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: var(--font-weight);
+  background: var(--bg);
+  color: var(--text);
+}
+
+#root {
+  min-height: 100%;
+}
+
+.app-surface {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app-card {
+  background: var(--card);
+  border-color: var(--border);
+}
+
+.app-border {
+  border-color: var(--border);
+}
+
+.app-text-muted {
+  color: var(--muted);
+}
+
+.app-input {
+  background: var(--card);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.app-hover:hover {
+  background: var(--hover);
+}
+
+.app-accent {
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border-color: var(--accent);
+}
+
+.app-accent-soft {
+  background: var(--accent-secondary);
+  color: var(--text);
+  border-color: var(--accent-secondary);
+}
+
+.app-accent-outline {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.manual-card {
+  animation: cardFadeIn 260ms ease-out both;
+}
